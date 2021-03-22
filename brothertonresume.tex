@@ -1,0 +1,205 @@
+% Brett Brotherton
+% Created: 4 Nov 2007, Modified 21 Mar 2021
+
+
+\documentclass[10pt,oneside]{article}
+\usepackage{geometry}
+% \usepackage[T1]{fontenc}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=.5in,bmargin=.5in,lmargin=.5in,rmargin=.5in,headheight=0in,headsep=0in,footskip=.1in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{Brett Brotherton}
+\newcommand{\addr}{7674 Umber Ct, Arvada CO 80007}
+\newcommand{\phone}{(909) 910-0228}
+\newcommand{\email}{brett.brotherton@gmail.com}
+\newcommand{\website}{https://github.com/bbrother/resume}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+  \begin{center}\fontfamily{cmr}\selectfont\Huge\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+  \vspace{-2pt}
+  {\fontfamily{cmr}\selectfont\Large#1}
+  \begin{itemize}
+  \vspace{-1pt}
+}{
+  \end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+  \vspace{-4pt}
+  \item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+  \vspace{-1pt}
+  \item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+  \vspace{-5pt}
+  \item
+  \textbf{#1}---#2 \hfill \textit{#3}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+  \resbigitem{#1}{#2}{#3}
+  \vspace{-2pt}
+  \begin{itemize}
+}{
+  \end{itemize}
+}
+
+\newenvironment{ressubsec2}[3]{
+  \resbigitem{#1}{#2}{#3}
+  \vspace{-2pt}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+  \resitem{\textbf{#1}}
+  \vspace{-5pt}
+  \begin{itemize}
+}{
+  \end{itemize}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+\fontfamily{cmr} \selectfont
+
+% Name with horizontal rule
+\bigname{\name}
+
+\vspace{-8pt} \rule{\textwidth}{1pt}
+
+\vspace{-1pt} {\small\itshape \begin{center}\addr ; \phone; \email ; \website \end{center}}
+
+\vspace{8 pt}
+
+
+
+\begin{ressection}{Education}
+
+  \begin{ressubsec2}{University of California}{Santa Barbara, CA}{M.S. Computer Engineering, December, 2007}
+  \end{ressubsec2}
+
+  \begin{ressubsec2}{University of California}{Riverside, CA}{B.S. Computer Engineering, June, 2006}
+  \end{ressubsec2}
+
+\end{ressection}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Overview}
+  \resitem{Creative and motivated software/embedded engineer with a wide breadth of knowledge and technical skills.
+           Over the past 15+ years I have worked on everything from embedded firmware, embedded Linux development,
+           Linux Kernel drivers, highly customized Linux distributions, to Java Applications and Android development.
+           I have experience with PCB design, test, and packaging as well as software development under the Agile
+           development model. I have served as technical lead on multiple successful projects and have the skills to
+           take a project from idea to a successful deliverable.  I have years of experience working with and delivering
+           projects to government customers. I am constantly improving and learning new skills to get the job done.}
+\end{ressection}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Experience}
+  \begin{ressubsec}{CACI (acquired LGS Innovations in March 2019)}{Westminster, CO}{Firmware Engineer, Distinguished Member of Technical Staff: August 2014--Present}
+    \ressubitem{Serve as technical lead on multiple projects developing custom cellular survey tools}
+    \ressubitem{Write firmware for cellular modems supporting GSM, UMTS and LTE protocols}
+    \ressubitem{Work closely with software developers/hardware team to ensure systems meet requirements and function properly}
+    \ressubitem{Lead cross organization improvements to our products and DevOps with an emphasis on improving maintainability and allowing for easy provisioning and upgrading of systems}
+    \ressubitem{Develop and maintain a customized Yocto distribution to support over 10 different hardware platforms encompassing both ARM and Intel architectures}
+  \end{ressubsec}
+
+
+  \begin{ressubsec}{Special Technologies Laboratory}{Santa Barbara, CA}{Senior Engineer: August 2007--August 2014}
+    \ressubitem{Technical project lead responsibilities included working on multiple projects with teams situated
+                throughout the country}
+    \ressubitem{Involved in all aspects of development including interfacing with customers to obtain and refine
+                requirements, technical development, testing, version control and documentation}
+    \ressubitem{Firmware development for low power devices, software application development, circuit design, Linux
+                and embedded Linux development}
+    \ressubitem{Maintained regular contact with customers fine tuning requirements, giving product demonstrations and
+                status updates}
+  \end{ressubsec}
+
+  \begin{ressubsec}{University of California}{Santa Barbara, CA}{Graduate Student Researcher: August 2006--August 2007}
+    \ressubitem{Worked with the Reconfigurable Security Group researching secure design methods and tools for
+                reconfigurable devices}
+  \end{ressubsec}
+
+  \begin{ressubsec}{University of California}{Riverside, CA}{Undergraduate Researcher: January 2006--June 2006}
+    \ressubitem{Worked on a project doing firmware development for low power sensor devices}
+  \end{ressubsec}
+
+  \begin{ressubsec}{University of California}{Santa Barbara, CA}{Summer Intern: June 2005--August 2005}
+    \ressubitem{Designed a hardware for high speed string matching to be used for network intrusion detection and prevention, using verilog and C}
+  \end{ressubsec}
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{ressection}{Publications}
+%
+%  \resitem{T. Huffmire, B. Brotherton, G. Wang, T. Sherwood, R. Kastner, T. Levin, T. Nguyen, and C. Irvine, Moats and drawbridges: An isolation primitive for reconfigurable hardware based systems, in Proceedings of the 2007 IEEE Symposium on Security and Privacy, Oakland, CA, USA, May 2007.}
+%
+%  \resitem{Lin Tan, Brett Brotherton, and Timothy Sherwood. "Bit-Split String Matching Engines Intrusion Detection and Prevention." ACM Transactions on Architecture and Code Optimization, March, 2006.}
+%
+%\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Skills}
+  \resitem{Languages: C++, C, Python, Assembly, Bash, Java}
+  \resitem{Databases: MySQL, SQLite}
+  \resitem{Operating Systems: Linux, Embedded Linux, Android, FreeRTOS, Protothreads}
+  \resitem{Applications: Git, Gerrit, Gitlab, GCC, CMake, Docker, Yocto, Clang tools}
+  \resitem{Hardware: Atmel AVR, AVR32, ARM, Xilinx/Zynq, Pic, STMicro, TI MSP430, Snapdragon}
+  \resitem{Communication Protocols: USB, TCP/IP, Ethernet, SPI, I2C, RS232, GSM, UMTS, LTE}
+\end{ressection}
+
+\begin{ressection}{Certifications}
+  \resitem{Hold a current U.S. government security clearance}
+\end{ressection}
+
+% \begin{ressection}{Graduate Coursework}
+%   \resitem{Computer Arithmetic, Embedded System Design, Advanced Computer Architecture, Distributed Systems, Introduction to design automation, Advanced Network Security Intrusion Detection and Prevention, Fault Tolerant Design}
+% \end{ressection}
+%
+% \begin{ressection}{Undergraduate Coursework}
+%   \resitem{C/C++ Data Structures and Algorithms, Computer Security, Logic Design, Electronic Circuit Analysis, Signals and Systems, Digital Signal Processing, Embedded and Real-Time Systems, Data Acquisition, Instrumentation, and Process Control, Software Engineering, Operating Systems, Computer Architecture, Machine Organization and Assembly Language Programming, Discrete Mathematics, Multivariable Calculus, Linear Algebra, Differential Equations.}
+% \end{ressection}
+%
+% \begin{ressection}{Awards and Honors}
+%   \resitem{Chancellors Scholarship from University of California, Riverside, The Governor's Scholarship, Dean's List for outstanding academic achievement, Golden Key International Honor Society}
+% \end{ressection}
+
+\begin{ressection}{References}
+  \resitem{Available upon request}
+\end{ressection}
+\end{document}
