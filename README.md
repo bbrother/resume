@@ -1,1 +1,1 @@
-# resume
+To see a PDF version of my resume please goto the [latest release](https://github.com/bbrother/resume/releases/latest)
