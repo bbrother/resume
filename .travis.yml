@@ -4,7 +4,7 @@ dist: focal
 language: bash
 
 before_install:
-  - sudo apt-get -y install texlive-latex-base
+  - sudo apt-get -y install texlive-latex-base texlive-latex-extra
 
 script:
   - make
@@ -16,4 +16,5 @@ deploy:
   file: "brothertonresume.pdf"
   overwrite: true
   skip_cleanup: true
-  draft: true
+  on:
+    tag: true
