@@ -14,7 +14,6 @@ deploy:
   api_key:
     secure: H6j/Kdg7HCbsn3a2q2T59hIiuE+suPeszkjBS+FRpc787EltSaKG+WZGBXQ7x1rKDVvOS3RYehfxyCB7JfZjCJBbq6u08GaTq6yIOGeq2nQVS5OzooVXTxnmsHIyOFlCp21M6j6l3fIvVd9PRCq0QJM9UBaSoF9a3+If5FlwYNZlnGpmUDOGelpQZ2uMvIh/Wfizk2JYj2PlkuHHWQfJDX5F0JrkfeXmmaZZZJ4K0UN5GThrTqN2csdWXsnDGdF+Qv4mtwdVgJTOyld4OJJQylY4SHP/x1cukGNgH55wl21dsxBYUNNbYaQEkE+ZuE+bNFc2QFSjc5ui2W/ZD0fqGxFCw4X3/S940yQSsJwxa1TjjpGiCWjF6oTN0kVnB2D4ZcEbR6YWMntFDDopUQHlbtSjk7069eHXsg38hMLfnwYr/ANtMNPPmBPlGK/adwbRLx+Yds62ux909cf2AjH4+x15xalnXjAzFVYHD0lvWlcQnhyZ+RgOM7YSOU1EquyTIAAwIUMxVOmEThkWkvvyybMKaeYChPj1PPm7Qg1ScBWS1KNSOjfUXCvcxZXKqexPytwEh/13wFfL5J2E4UgLwC0bChGXAxA8zjvxQUPskJk7MlTy0UZTf1v/fXyqr6gQRN+AztI10AQO/9o6XQ5U3Fv+rH868Y5RsYShG55jV5I=
   file: "brothertonresume.pdf"
-  overwrite: true
   skip_cleanup: true
   on:
-    tag: true
+    tags: true
