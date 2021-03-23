@@ -4,7 +4,16 @@
 
 \documentclass[10pt,oneside]{article}
 \usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
 % \usepackage[T1]{fontenc}
+
 
 \pagestyle{empty}
 \geometry{letterpaper,tmargin=.5in,bmargin=.5in,lmargin=.5in,rmargin=.5in,headheight=0in,headsep=0in,footskip=.1in}
@@ -20,7 +29,7 @@
 \newcommand{\addr}{7674 Umber Ct, Arvada CO 80007}
 \newcommand{\phone}{(909) 910-0228}
 \newcommand{\email}{brett.brotherton@gmail.com}
-\newcommand{\website}{https://github.com/bbrother/resume}
+\newcommand{\website}{\url{https://github.com/bbrother/resume}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,23 +42,24 @@
 
 % A ressection is a main section (<H1>Section</H1>)
 \newenvironment{ressection}[1]{
-  \vspace{-2pt}
+  \vspace{4pt}
   {\fontfamily{cmr}\selectfont\Large#1}
-  \begin{itemize}
-  \vspace{-1pt}
+  \setlist[itemize]{align=parleft,left=0pt..1em}
+  \begin{itemize}[label={}]
+  \vspace{4pt}
 }{
   \end{itemize}
 }
 
 % A resitem is a simple list element in a ressection (first level)
 \newcommand{\resitem}[1]{
-  \vspace{-4pt}
+  \vspace{2pt}
   \item \begin{flushleft} #1 \end{flushleft}
 }
 
 % A ressubitem is a simple list element in anything but a ressection (second level)
 \newcommand{\ressubitem}[1]{
-  \vspace{-1pt}
+  \vspace{2pt}
   \item \begin{flushleft} #1 \end{flushleft}
 }
 
@@ -58,15 +68,16 @@
 %  Arg 2: Location
 %  Arg 3: Title and/or date range
 \newcommand{\resbigitem}[3]{
-  \vspace{-5pt}
+  \vspace{2pt}
   \item
   \textbf{#1}---#2 \hfill \textit{#3}
 }
 
 % This is a list that comes with a resbigitem
 \newenvironment{ressubsec}[3]{
-  \resbigitem{#1}{#2}{#3}
-  \vspace{-2pt}
+  \item
+  \textbf{#3}\\{#1}\hfill \textit{#2}
+  \vspace{0pt}
   \begin{itemize}
 }{
   \end{itemize}
@@ -74,13 +85,13 @@
 
 \newenvironment{ressubsec2}[3]{
   \resbigitem{#1}{#2}{#3}
-  \vspace{-2pt}
+  \vspace{0pt}
 }
 
 % This is a simple sublist
 \newenvironment{reslist}[1]{
   \resitem{\textbf{#1}}
-  \vspace{-5pt}
+  \vspace{0pt}
   \begin{itemize}
 }{
   \end{itemize}
@@ -98,24 +109,13 @@
 % Name with horizontal rule
 \bigname{\name}
 
-\vspace{-8pt} \rule{\textwidth}{1pt}
+\vspace{2pt} {\small\itshape \begin{center}\addr ; \phone; \email ; \website \end{center}}
 
-\vspace{-1pt} {\small\itshape \begin{center}\addr ; \phone; \email ; \website \end{center}}
+\vspace{2pt} \rule{\textwidth}{1pt}
 
 \vspace{8 pt}
 
 
-
-\begin{ressection}{Education}
-
-  \begin{ressubsec2}{University of California}{Santa Barbara, CA}{M.S. Computer Engineering, December, 2007}
-  \end{ressubsec2}
-
-  \begin{ressubsec2}{University of California}{Riverside, CA}{B.S. Computer Engineering, June, 2006}
-  \end{ressubsec2}
-
-\end{ressection}
-%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{ressection}{Overview}
   \resitem{Creative and motivated software/embedded engineer with a wide breadth of knowledge and technical skills.
            Over the past 15+ years I have worked on everything from embedded firmware, embedded Linux development,
@@ -125,9 +125,18 @@
            take a project from idea to a successful deliverable.  I have years of experience working with and delivering
            projects to government customers. I am constantly improving and learning new skills to get the job done.}
 \end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Education}
+  \begin{ressubsec2}{University of California}{Santa Barbara, CA}{M.S. Computer Engineering}
+  \end{ressubsec2}
+  \begin{ressubsec2}{University of California}{Riverside, CA}{B.S. Computer Engineering}
+  \end{ressubsec2}
+\end{ressection}
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{ressection}{Experience}
-  \begin{ressubsec}{CACI (acquired LGS Innovations in March 2019)}{Westminster, CO}{Firmware Engineer, Distinguished Member of Technical Staff: August 2014--Present}
+  \begin{ressubsec}{CACI (acquired LGS Innovations in March 2019)}{Westminster, CO}{Firmware Engineer: August 2014--Present}
+    \ressubitem{Received Distinguished Member of Technical Staff distinction}
     \ressubitem{Serve as technical lead on multiple projects developing custom cellular survey tools}
     \ressubitem{Write firmware for cellular modems supporting GSM, UMTS and LTE protocols}
     \ressubitem{Work closely with software developers/hardware team to ensure systems meet requirements and function properly}
@@ -137,28 +146,28 @@
 
 
   \begin{ressubsec}{Special Technologies Laboratory}{Santa Barbara, CA}{Senior Engineer: August 2007--August 2014}
-    \ressubitem{Technical project lead responsibilities included working on multiple projects with teams situated
+    \ressubitem{Technical project lead responsibilities included working on multiple projects with teams
                 throughout the country}
-    \ressubitem{Involved in all aspects of development including interfacing with customers to obtain and refine
-                requirements, technical development, testing, version control and documentation}
+    \ressubitem{Involved in entire product lifecycle including technical development, testing, version control,
+                documentation and maintenance}
     \ressubitem{Firmware development for low power devices, software application development, circuit design, Linux
                 and embedded Linux development}
     \ressubitem{Maintained regular contact with customers fine tuning requirements, giving product demonstrations and
                 status updates}
   \end{ressubsec}
 
-  \begin{ressubsec}{University of California}{Santa Barbara, CA}{Graduate Student Researcher: August 2006--August 2007}
-    \ressubitem{Worked with the Reconfigurable Security Group researching secure design methods and tools for
-                reconfigurable devices}
-  \end{ressubsec}
-
-  \begin{ressubsec}{University of California}{Riverside, CA}{Undergraduate Researcher: January 2006--June 2006}
-    \ressubitem{Worked on a project doing firmware development for low power sensor devices}
-  \end{ressubsec}
-
-  \begin{ressubsec}{University of California}{Santa Barbara, CA}{Summer Intern: June 2005--August 2005}
-    \ressubitem{Designed a hardware for high speed string matching to be used for network intrusion detection and prevention, using verilog and C}
-  \end{ressubsec}
+%  \begin{ressubsec}{University of California}{Santa Barbara, CA}{Graduate Student Researcher: August 2006--August 2007}
+%    \ressubitem{Worked with the Reconfigurable Security Group researching secure design methods and tools for
+%                reconfigurable devices}
+%  \end{ressubsec}
+%
+%  \begin{ressubsec}{University of California}{Riverside, CA}{Undergraduate Researcher: January 2006--June 2006}
+%    \ressubitem{Worked on a project doing firmware development for low power sensor devices}
+%  \end{ressubsec}
+%
+%  \begin{ressubsec}{University of California}{Santa Barbara, CA}{Summer Intern: June 2005--August 2005}
+%    \ressubitem{Designed a hardware for high speed string matching to be used for network intrusion detection and prevention, using verilog and C}
+%  \end{ressubsec}
 
 \end{ressection}
 
@@ -199,7 +208,7 @@
 %   \resitem{Chancellors Scholarship from University of California, Riverside, The Governor's Scholarship, Dean's List for outstanding academic achievement, Golden Key International Honor Society}
 % \end{ressection}
 
-\begin{ressection}{References}
-  \resitem{Available upon request}
-\end{ressection}
+% \begin{ressection}{References}
+%   \resitem{Available upon request}
+% \end{ressection}
 \end{document}
